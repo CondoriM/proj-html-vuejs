@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+//Color Pallet
+$col-one: #fdfdfd;
+$col-two: #242b32;
+$col-tree: #54a096;
+$col-four: #bcbcbd;
+$col-five: #ca865f;
+$col-six: #7a0203;
+$col-seven: #bb5c02;
+$col-eight: #03d4db;
+$col-nine: #fbee02;
+$col-ten: #f1f16a;
+
+$med-one: #ebe9e7;
+$med-two: #30343a;
+$med-tree: #74a59e;
+$med-four: #817b7d;
+$med-five: #8c919e;
+
+$mat-one: #d3964e;
+$mat-two: #555154;
+$mat-tree: #8c5026;
+$mat-four: #666971;
+$mat-one: #d2524a;
+
+$my-col: #61aca5;
+
 .jumbo{
     background-image: url('@/assets/img/video_law_home_preview.jpg');
     height: 300px;
@@ -11,3 +37,16 @@
     background-size: cover;
 }
 
+.bg_second{
+    background-color: $med-one;
+}
+
+.bg_third{
+    background-color: $col-tree;
+}
+
+.btn_c{
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+}
