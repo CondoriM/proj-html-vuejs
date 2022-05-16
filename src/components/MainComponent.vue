@@ -97,6 +97,21 @@
                 </div>
             </div>
         </section>
+
+        <section id="together" class="row text-center justify-content-center p-5 ">
+            <div class="col-10 d-flex flex-column align-items-center">
+                <h4>LET'S WORK TOGETHER</h4>
+
+                <!-- linea decorativa -->
+                <div class="col-2 p-4">
+                    <hr>
+                </div>
+
+                <p>We work as a single united team with market leading firms around the world and give our clients the highest quality advice possible.</p>
+
+                <a class="btn_c my-5" href="#">MAKE ENQUIRY</a>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -132,14 +147,10 @@ export default {
             ],
 
             law:[
-                {img: 'law_3.jpg', title: 'INTERNATIONAL',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
-                {img: 'law_7.jpg', title: 'PARTNERSHIPS',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
-                {img: 'law_8.jpg', title: 'EXCELLENCE',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'}
+                {img: 'law_7.jpg', title: 'INTERNATIONAL',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
+                {img: 'law_8.jpg', title: 'PARTNERSHIPS',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
+                {img: 'law_3.jpg', title: 'EXCELLENCE',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'}
             ],
-
-            cssProps: {
-                backgroundImage: `url(${require('@/assets/img/law_3.jpg')})`,
-            },
         };
     }, 
 }
@@ -185,6 +196,16 @@ color:$col-one;
 #law{
     img{
         width: 100%;
+    }
+}
+
+#together{
+    background-image: url('@/assets/img/where-we-work-parallax.jpg');
+    background-position: center;
+    color: $col-one;
+
+    a{
+        background-color: $col-tree;
     }
 }
 </style>
