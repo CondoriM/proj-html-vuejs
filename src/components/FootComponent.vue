@@ -46,7 +46,7 @@ export default {
         position: absolute;
         bottom: 0;
         background-color: $med-two;
-        right: 4rem;
+        right: 3rem;
         border-radius: 5px 5px 0px 0px;
     }
 }
