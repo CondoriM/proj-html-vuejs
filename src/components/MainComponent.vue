@@ -91,8 +91,28 @@
                 <div class="row border_t">
                     <div class="col-4 p-4 bg_first" v-for="(col,index) in law" :key="col + index">
                         <img :src="require(`../assets/img/${col.img}`)" alt="">
-                        <h5>{{col.title}}</h5>
-                        <p class="mb-3">{{col.text}}</p>
+                        <h5 class="p-3">{{col.title}}</h5>
+                        <p class="mb-5">{{col.text}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my_row text-center justify-content-center">
+                <div class="col-10 d-flex justify-content-around align-items-center">
+                    <div class="col-3">
+                        <img src="@/assets/img/avada-law-logo.png" alt="">
+                    </div>
+
+                    <div class="col-8">
+                        <span class="d-flex justify-content-between">
+                            <a href="#">Home</a>
+                            <a href="#">Who We Are</a>
+                            <a href="#">What We Do</a>
+                            <a href="#">Where We Work</a>
+                            <a href="#">Careers</a>
+                            <a href="#">News</a>
+                            <a href="#">Contact</a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -194,8 +214,21 @@ color:$col-one;
 }
 
 #law{
+    position: relative;
+    .my_row{
+        position: absolute;
+        background-color: $col-one;
+        box-shadow: 2px 1px 8px $med-one;
+        bottom: 3.8rem;
+    }
+
     img{
         width: 100%;
+    }
+
+    a{
+        text-decoration: none;
+        color: $med-four
     }
 }
 
