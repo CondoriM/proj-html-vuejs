@@ -75,9 +75,26 @@
             </div>
         </section>
 
+        <!-- sezione envato -->
         <section id="envato" class="row text-center justify-content-center p-5 bg_third">
-            <div class="col-10">
+            <div class="col-10 flex-column">
+                <img src="" alt="">
+                <span>"We have worked with Avada Law for the past 15 years. As we have grown and evolved, what i have value most about our relationship is that Avada Law knowus and our business"</span>
+                <p class="p-3">Nigel Rawlinson • Senior Partner</p>
+            </div>
+        </section>
 
+        <section id="law" class="row text-center justify-content-center p-5 bg_second">
+            <div class="col-10 d-flex justify-content-center">
+
+                <!-- ciclo per creare le card in modo dinamico -->
+                <div class="row border_t">
+                    <div class="col-4 p-4 bg_first" v-for="(col,index) in law" :key="col + index">
+                        <img :src="require(`../assets/img/${col.img}`)" alt="">
+                        <h5>{{col.title}}</h5>
+                        <p class="mb-3">{{col.text}}</p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -112,9 +129,19 @@ export default {
                 {title: 'Surveys Matter', img:'@/assets/img/column3-image4.jpg'},
                 {title: 'In-House Work', img:'@/assets/img/column3-image5.jpg'},
                 {title: 'Obama Care', img:'@/assets/img/column3-image6.jpg'}
-            ]
+            ],
+
+            law:[
+                {img: 'law_3.jpg', title: 'INTERNATIONAL',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
+                {img: 'law_7.jpg', title: 'PARTNERSHIPS',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
+                {img: 'law_8.jpg', title: 'EXCELLENCE',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'}
+            ],
+
+            cssProps: {
+                backgroundImage: `url(${require('@/assets/img/law_3.jpg')})`,
+            },
         };
-    }
+    }, 
 }
 </script>
 
@@ -149,5 +176,15 @@ color:$col-one;
 }
 
 #envato{
+    background-color: $med-two;
+    color: $col-one;
+    background-image: url('@/assets/img/showeare-parallax.jpg');
+    background-position: center;
+}
+
+#law{
+    img{
+        width: 100%;
+    }
 }
 </style>
