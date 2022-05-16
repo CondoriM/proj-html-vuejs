@@ -2,13 +2,13 @@
     <div id="footer">
         <div class="container-fluid">
             <section class="row text-center justify-content-center p-3">
-                <div class="col-10 d-flex flex-column px-5">
+                <div class="col-10 d-flex flex-column px-5 gap-3">
                     <div class="col-12 text-start">
-                        <span>CALL OUR EXPERTS TODAY 1.800.555.6789</span>
+                        <span class="fw-bolder t_size">CALL OUR EXPERTS TODAY 1.800.555.6789</span>
                     </div>
 
                     <div class="col-12 d-flex">
-                        <div class="col-10 text-start">
+                        <div class="col-10 text-start t_two">
                             <span>©Copyright2012-2020 | Avada Theme by Theme Fusion | All Right Reserved | Powered by WordPress</span>
                         </div>
 

@@ -49,5 +49,20 @@ $my-col: #61aca5;
 .btn_c{
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
+    padding: 0.4rem;
+}
+
+//Text Decoration
+.t_one{
+    font-size: 0.9rem;
+    color: $mat-four;
+}
+
+.t_two{
+    font-size: 0.7rem;
+    color: $mat-four;
+}
+
+.t_size{
+    font-size: 0.9rem;
 }

@@ -9,7 +9,7 @@
                 <div class="row border_t">
                     <div class="col-4 p-4 bg_first" v-for="(col,index) in 3" :key="col + index">
                         <h5>WHO WE  ARE</h5>
-                        <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.</p>
+                        <p class="mb-3 t_one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.</p>
                         <a class="btn_c" href="#">LEARN MORE</a>
                     </div>
                 </div>
@@ -17,13 +17,14 @@
         </div>
 
         <!-- Seconda sezione main -->
-        <section class="row text-center justify-content-center p-5">
+        <section id="global" class="row text-center justify-content-center p-5">
             <div class="col-10 d-flex justify-content-around ">
 
                 <!-- ciclo per creare le card in modo dinamico -->
                 <div class="col-3 p-3" v-for="(col,index) in 4" :key="col + index">
+                    <font-awesome-icon class="check" icon="fa-solid fa-check" />
                     <h5>A GLOBAL VIEW</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum, corporis vero a id facere!</p>
+                    <p class="t_one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum, corporis vero a id facere!</p>
                 </div>
             </div>
         </section>
@@ -37,8 +38,9 @@
                     </h5>
                 </div>
 
+                <!-- Button -->
                 <div class="col-2 ">
-                    <a class="btn_c" href="#">
+                    <a class="btn_c t_size fw-bolder" href="#">
                         ASK AN EXPERT
                     </a>
                 </div>
@@ -60,8 +62,9 @@
 
                 <div class="col-12 d-flex gap-3 justify-content-center text-start">
 
+                    <!-- prima colonna "Members" -->
                     <div class="col-4 d-flex flex-column">
-                        <span>OUR PEOPLE</span>
+                        <span class="fw-bolder">OUR PEOPLE</span>
 
                         <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(member,index) in members" :key="index">
                             <div class="col-3">
@@ -71,13 +74,14 @@
                             </div>
 
                             <div class="col-8 d-flex align-items-center">   
-                                <p>{{member.name}}</p>
+                                <p class="t_one fw-bolder">{{member.name}}</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- seconda colonna "Practices" -->
                     <div class="col-4 d-flex flex-column">
-                        <span>OUR PRACTICE AREAS</span>
+                        <span class="fw-bolder">OUR PRACTICE AREAS</span>
 
                         <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(practic,index) in practices" :key="index + practic">
                             <div class="col-3">
@@ -87,13 +91,14 @@
                             </div>
 
                             <div class="col-8 d-flex align-items-center">   
-                                <p>{{practic.area}}</p>
+                                <p class="t_one fw-bolder">{{practic.area}}</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- terza colonna "Posts" -->
                     <div class="col-4 d-flex flex-column">
-                        <span>OUR PUBLICATIONS</span>
+                        <span class="fw-bolder">OUR PUBLICATIONS</span>
 
                         <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(post,index) in posts" :key="index + practic">
                             <div class="col-3">
@@ -103,7 +108,7 @@
                             </div>
 
                             <div class="col-8 d-flex align-items-center">   
-                                <p>{{post.title}}</p>
+                                <p class="t_one fw-bolder">{{post.title}}</p>
                             </div>
                         </div>
                     </div>
@@ -114,9 +119,9 @@
         <!-- sezione envato -->
         <section id="envato" class="row text-center justify-content-center p-5 bg_third">
             <div class="col-10 flex-column">
-                <img src="" alt="">
-                <span>"We have worked with Avada Law for the past 15 years. As we have grown and evolved, what i have value most about our relationship is that Avada Law knowus and our business"</span>
-                <p class="p-3">Nigel Rawlinson • Senior Partner</p>
+                <img class="mb-3" src="@/assets/img/envato-logo.png" alt=""><br>
+                <span class="fst-italic">"We have worked with Avada Law for the past 15 years. As we have grown and evolved, what i have value most about our relationship is that Avada Law knowus and our business"</span>
+                <p class="p-3 fw-bolder t_size">Nigel Rawlinson • Senior Partner</p>
             </div>
         </section>
 
@@ -128,7 +133,7 @@
                     <div class="col-4 p-4 bg_first" v-for="(col,index) in law" :key="col + index">
                         <img :src="require(`../assets/img/${col.img}`)" alt="">
                         <h5 class="p-3">{{col.title}}</h5>
-                        <p class="mb-5">{{col.text}}</p>
+                        <p class="mb-5 t_one">{{col.text}}</p>
                     </div>
                 </div>
             </div>
@@ -163,9 +168,11 @@
                     <hr>
                 </div>
 
-                <p>We work as a single united team with market leading firms around the world and give our clients the highest quality advice possible.</p>
+                <div class="col-9 ">
+                    <p class="fw-bolder mb-4">We work as a single united team with market leading firms around the world and give our clients the highest quality advice possible.</p>
 
-                <a class="btn_c my-5" href="#">MAKE ENQUIRY</a>
+                    <a class="btn_c my-5 fw-bold" href="#">MAKE ENQUIRY</a>
+                </div>
             </div>
         </section>
     </div>
@@ -229,6 +236,12 @@ export default {
     }
 }
 
+#global{
+    .check{
+        color: $col-tree;
+    }
+}
+
 #ask{
 color:$col-one;
     .btn_c{
@@ -276,6 +289,7 @@ color:$col-one;
     background-image: url('@/assets/img/where-we-work-parallax.jpg');
     background-position: center;
     color: $col-one;
+    font-family: 'Source Sans Pro', sans-serif;
 
     a{
         background-color: $col-tree;

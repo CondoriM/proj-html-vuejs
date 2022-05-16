@@ -1,12 +1,12 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <div class="col-6 text-center">
-                    <p class="">Avada & Associates legal team announce deal to open up oil & gas</p>
+            <div class="col-12 p-1">
+                <div class="col-8 text-center">
+                    <p class="t_two ">Avada & Associates legal team announce deal to open up oil & gas</p>
                 </div>
 
-                <div class="col-6 text-center">
+                <div class="col-4 text-center">
                     
                 </div>
             </div>
