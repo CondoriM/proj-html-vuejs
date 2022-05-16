@@ -38,6 +38,11 @@ $my-col: #61aca5;
     background-size: cover;
 }
 
+.bg_first{
+    background-color: $col-one;
+    border: 1px solid $col-four;
+}
+
 .bg_second{
     background-color: $med-one;
 }

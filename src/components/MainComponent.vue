@@ -2,7 +2,7 @@
     <div class="container-fluid">
 
         <!-- Prima sezione main -->
-        <div class="row text-center justify-content-center p-5 bg_second">
+        <div id="first" class="row text-center justify-content-center p-5 bg_second">
             <div class="col-10 d-flex justify-content-center">
 
                 <!-- ciclo per creare le card in modo dinamico -->
@@ -10,7 +10,7 @@
                     <div class="col-4 p-4 bg_first" v-for="(col,index) in 3" :key="col + index">
                         <h5>WHO WE  ARE</h5>
                         <p class="mb-3 t_one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.</p>
-                        <a class="btn_c" href="#">LEARN MORE</a>
+                        <a class="btn_c grow" href="#"><span>LEARN MORE</span></a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <!-- Button -->
                 <div class="col-2 ">
                     <a class="btn_c t_size fw-bolder" href="#">
-                        ASK AN EXPERT
+                        <span>ASK AN EXPERT</span>
                     </a>
                 </div>
             </div>
@@ -144,15 +144,15 @@
                         <img src="@/assets/img/avada-law-logo.png" alt="">
                     </div>
 
-                    <div class="col-8">
-                        <span class="d-flex justify-content-between">
-                            <a href="#">Home</a>
-                            <a href="#">Who We Are</a>
-                            <a href="#">What We Do</a>
-                            <a href="#">Where We Work</a>
-                            <a href="#">Careers</a>
-                            <a href="#">News</a>
-                            <a href="#">Contact</a>
+                    <div class="col-8 bar">
+                        <span class="d-flex justify-content-between bar">
+                            <a class="d-flex align-items-center bar" href="#"><span>Home</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>Who We Are</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>What We Do</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>Where We Work</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>Careers</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>News</span></a>
+                            <a class="d-flex align-items-center bar" href="#"><span>Contact</span></a>
                         </span>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                 <div class="col-9 ">
                     <p class="fw-bolder mb-4">We work as a single united team with market leading firms around the world and give our clients the highest quality advice possible.</p>
 
-                    <a class="btn_c my-5 fw-bold" href="#">MAKE ENQUIRY</a>
+                    <a class="btn_c my-5 fw-bold" href="#"><span>MAKE ENQUIRY</span></a>
                 </div>
             </div>
         </section>
@@ -222,16 +222,44 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/style.scss';
+#first{
 
-.border_t{
-    border-top: 3px green solid;
+    .border_t{
+        border-top: 3px green solid;
 
-    .bg_first{
-    background-color: $col-one;
-    border: 1px solid $col-four;
+        .bg_first{
+        background-color: $col-one;
+        border: 1px solid $col-four;
 
-        a{
-        background-color: $med-two;
+            a{
+                background-color: $med-two;
+                position: relative;
+                transition: all .35s;
+
+                &:after{
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background: $col-four;
+                    transition: all .35s;
+                } 
+
+                &:hover{
+                    color: $col-two;
+                }
+
+                &:hover:after{
+                    width: 100%;
+                }
+
+                span{
+                    position: relative;
+                    z-index: 2;
+                }
+            }
         }
     }
 }
@@ -246,7 +274,31 @@ export default {
 color:$col-one;
     .btn_c{
         background-color: $my-col;
+        position: relative;
+        transition: all .35s;
+        span{
+            position: relative;
+            z-index: 2;
+        }
     }
+    .btn_c:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: $col-four;
+        transition: all .35s;
+    } 
+    
+    .btn_c:hover{
+        color: $col-tree;
+    }
+
+    a:hover:after{
+        width: 100%;
+    }   
 }
 
 #challenge{
@@ -272,16 +324,24 @@ color:$col-one;
         position: absolute;
         background-color: $col-one;
         box-shadow: 2px 1px 8px $med-one;
-        bottom: 3.8rem;
+        bottom: 4rem;
     }
 
     img{
         width: 100%;
     }
 
-    a{
-        text-decoration: none;
-        color: $med-four
+    .bar{
+        height: 100%;
+        a{
+            text-decoration: none;
+            color: $med-four;
+            height: 100%;
+            
+            &:hover{
+                border-top: 2px solid green;
+            }
+        }
     }
 }
 
@@ -293,6 +353,32 @@ color:$col-one;
 
     a{
         background-color: $col-tree;
+        position: relative;
+        transition: all .35s;
+
+        &:after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: $col-four;
+            transition: all .35s;
+        } 
+
+        &:hover{
+            color: $col-two;
+        }
+
+        &:hover:after{
+            width: 100%;
+        }
+
+        span{
+            position: relative;
+            z-index: 2;
+        }
     }
 }
 </style>
