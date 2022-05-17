@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 p-1 d-flex align-items-center">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xxl-6 p-1 d-flex align-items-center">
                 <div class="col-8 text-center">
                     <p class="t_two ">Avada & Associates legal team announce deal to open up oil & gas</p>
                 </div>

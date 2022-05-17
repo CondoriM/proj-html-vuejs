@@ -3,7 +3,7 @@
 
         <!-- Prima sezione main -->
         <div id="first" class="row text-center justify-content-center p-5 bg_second">
-            <div class="col-10 d-flex justify-content-center">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex justify-content-center">
 
                 <!-- ciclo per creare le card in modo dinamico -->
                 <div class="row border_t">
@@ -18,7 +18,7 @@
 
         <!-- Seconda sezione main -->
         <section id="global" class="row text-center justify-content-center p-5">
-            <div class="col-10 d-flex justify-content-around ">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex justify-content-around ">
 
                 <!-- ciclo per creare le card in modo dinamico -->
                 <div class="col-3 p-3" v-for="(col,index) in 4" :key="col + index">
@@ -31,15 +31,15 @@
         
         <!-- Section ask -->
         <section id="ask" class="row text-center justify-content-center p-5 bg_third">
-            <div class="col-10 d-flex">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex">
                 <div class="col-10">
-                    <h5>
+                    <h5 class="text-start">
                         QUESTION ABOUT A JUDICIAL ISSUE? ASK OUR EXPERTS.
                     </h5>
                 </div>
 
                 <!-- Button -->
-                <div class="col-2 ">
+                <div class="col-2 col-sm-3">
                     <a class="btn_c t_size fw-bolder" href="#">
                         <span>ASK AN EXPERT</span>
                     </a>
@@ -48,7 +48,7 @@
         </section>
 
         <section id="challenge" class="row text-center justify-content-center p-5">
-            <div class="col-10 d-flex flex-column align-items-center">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex flex-column align-items-center">
 
                 <!-- title section -->
                 <div class="col-12">
@@ -100,7 +100,7 @@
                     <div class="col-4 d-flex flex-column">
                         <span class="fw-bolder">OUR PUBLICATIONS</span>
 
-                        <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(post,index) in posts" :key="index + practic">
+                        <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(post,index) in posts" :key="index">
                             <div class="col-3">
                                 <div class="card rounded-0">
                                     <img :src="require(`../assets/img/${post.img}`)" alt="">
@@ -118,19 +118,20 @@
 
         <!-- sezione envato -->
         <section id="envato" class="row text-center justify-content-center p-5 bg_third">
-            <div class="col-10 flex-column">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 flex-column">
                 <img class="mb-3" src="@/assets/img/envato-logo.png" alt=""><br>
                 <span class="fst-italic">"We have worked with Avada Law for the past 15 years. As we have grown and evolved, what i have value most about our relationship is that Avada Law knowus and our business"</span>
                 <p class="p-3 fw-bolder t_size">Nigel Rawlinson • Senior Partner</p>
             </div>
         </section>
 
+        <!-- Sezione Law -->
         <section id="law" class="row text-center justify-content-center p-5 bg_second">
-            <div class="col-10 d-flex justify-content-center">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex justify-content-center">
 
                 <!-- ciclo per creare le card in modo dinamico -->
                 <div class="row border_t">
-                    <div class="col-4 p-4 bg_first" v-for="(col,index) in law" :key="col + index">
+                    <div class="col-4  p-4 bg_first" v-for="(col,index) in law" :key="col + index">
                         <img :src="require(`../assets/img/${col.img}`)" alt="">
                         <h5 class="p-3">{{col.title}}</h5>
                         <p class="mb-5 t_one">{{col.text}}</p>
@@ -139,12 +140,15 @@
             </div>
 
             <div class="row my_row text-center justify-content-center">
-                <div class="col-10 d-flex justify-content-around align-items-center">
-                    <div class="col-3">
+                <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex gap-xl-3 justify-content-around align-items-center">
+
+                    <!-- sezione logo -->
+                    <div class="col-xl-3 col-2">
                         <img src="@/assets/img/avada-law-logo.png" alt="">
                     </div>
 
-                    <div class="col-8 bar">
+                    <!--  -->
+                    <div class="col-8 col-xxl-10 bar">
                         <span class="d-flex justify-content-between bar">
                             <a class="d-flex align-items-center bar" href="#"><span>Home</span></a>
                             <a class="d-flex align-items-center bar" href="#"><span>Who We Are</span></a>
@@ -160,7 +164,7 @@
         </section>
 
         <section id="together" class="row text-center justify-content-center p-5 ">
-            <div class="col-10 d-flex flex-column align-items-center">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex flex-column align-items-center">
                 <h4>LET'S WORK TOGETHER</h4>
 
                 <!-- linea decorativa -->
