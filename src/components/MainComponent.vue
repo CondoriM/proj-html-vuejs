@@ -39,7 +39,7 @@
                 </div>
 
                 <!-- Button -->
-                <div class="col-2 col-sm-3">
+                <div class="col-2 col-sm-3 d-flex align-items-center">
                     <a class="btn_c t_size fw-bolder" href="#">
                         <span>ASK AN EXPERT</span>
                     </a>

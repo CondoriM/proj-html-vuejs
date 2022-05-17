@@ -13,10 +13,12 @@
                         </div>
 
                         <div class="col-sm-1 col-lg-2 text-end">
-                            <a href="#">c</a>
-                            <a href="#">c</a>
-                            <a href="#">c</a>
-                            <a href="#">c</a>
+                            <div class="col-7 d-flex gap-1 text-center">
+
+                                <div class="col-3 social" v-for="(social,index) in socials" :key="index">
+                                    <img :src="require(`../assets/img/${social.img}`)" alt="">
+                                </div>                            
+                            </div>
                         </div>
 
                     </div>
@@ -34,7 +36,16 @@
 
 <script>
 export default {
-    
+    data(){
+        return{
+            socials:[
+                {img:'facebook.png'},
+                {img:'twitter.png'},
+                {img:'instagram.png'},
+                {img:'youtube.png'}
+            ]
+        }
+    }
 }
 </script>
 
@@ -43,6 +54,11 @@ export default {
 
 #footer{
     position: relative;
+
+    img{
+        width: 100%;
+        filter: grayscale(100%);
+    }
 
     .btn_c{
         position: absolute;
