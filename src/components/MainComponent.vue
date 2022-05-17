@@ -30,9 +30,9 @@
         </section>
         
         <!-- Section ask -->
-        <section id="ask" class="row text-center justify-content-center p-5 bg_third">
-            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex">
-                <div class="col-10">
+        <section id="ask" class="row text-center justify-content-center p-5">
+            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex justify-content-center">
+                <div class="col-10 col-sm-8">
                     <h5 class="text-start">
                         QUESTION ABOUT A JUDICIAL ISSUE? ASK OUR EXPERTS.
                     </h5>
@@ -47,74 +47,7 @@
             </div>
         </section>
 
-        <section id="challenge" class="row text-center justify-content-center p-5">
-            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex flex-column align-items-center">
-
-                <!-- title section -->
-                <div class="col-12">
-                    <h5>GLOBAL CHALLENGE WORLD CLASS RESPONSE</h5>
-                </div>
-
-                <!-- linea decorativa -->
-                <div class="col-3 p-4">
-                    <hr>
-                </div>
-
-                <div class="col-12 d-flex gap-3 justify-content-center text-start">
-
-                    <!-- prima colonna "Members" -->
-                    <div class="col-4 d-flex flex-column">
-                        <span class="fw-bolder">OUR PEOPLE</span>
-
-                        <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(member,index) in members" :key="index">
-                            <div class="col-3">
-                                <div class="card rounded-0">
-                                    <img :src="require(`../assets/img/${member.img}`)" alt="">
-                                </div>
-                            </div>
-
-                            <div class="col-8 d-flex align-items-center">   
-                                <p class="t_one fw-bolder">{{member.name}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- seconda colonna "Practices" -->
-                    <div class="col-4 d-flex flex-column">
-                        <span class="fw-bolder">OUR PRACTICE AREAS</span>
-
-                        <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(practic,index) in practices" :key="index + practic">
-                            <div class="col-3">
-                                <div class="card rounded-0">
-                                    <img :src="require(`../assets/img/${practic.img}`)" alt="">
-                                </div>
-                            </div>
-
-                            <div class="col-8 d-flex align-items-center">   
-                                <p class="t_one fw-bolder">{{practic.area}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- terza colonna "Posts" -->
-                    <div class="col-4 d-flex flex-column">
-                        <span class="fw-bolder">OUR PUBLICATIONS</span>
-
-                        <div class="my_card d-flex my-2 p-3 justify-content-between" v-for="(post,index) in posts" :key="index">
-                            <div class="col-3">
-                                <div class="card rounded-0">
-                                    <img :src="require(`../assets/img/${post.img}`)" alt="">
-                                </div>
-                            </div>
-
-                            <div class="col-8 d-flex align-items-center">   
-                                <p class="t_one fw-bolder">{{post.title}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <ChallengeComp/>
 
         <!-- sezione envato -->
         <section id="envato" class="row text-center justify-content-center p-5 bg_third">
@@ -126,42 +59,7 @@
         </section>
 
         <!-- Sezione Law -->
-        <section id="law" class="row text-center justify-content-center p-5 bg_second">
-            <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex justify-content-center">
-
-                <!-- ciclo per creare le card in modo dinamico -->
-                <div class="row border_t">
-                    <div class="col-4  p-4 bg_first" v-for="(col,index) in law" :key="col + index">
-                        <img :src="require(`../assets/img/${col.img}`)" alt="">
-                        <h5 class="p-3">{{col.title}}</h5>
-                        <p class="mb-5 t_one">{{col.text}}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my_row text-center justify-content-center">
-                <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex gap-xl-3 justify-content-around align-items-center">
-
-                    <!-- sezione logo -->
-                    <div class="col-xl-3 col-2">
-                        <img src="@/assets/img/avada-law-logo.png" alt="">
-                    </div>
-
-                    <!--  -->
-                    <div class="col-8 col-xxl-10 bar">
-                        <span class="d-flex justify-content-between bar">
-                            <a class="d-flex align-items-center bar" href="#"><span>Home</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>Who We Are</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>What We Do</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>Where We Work</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>Careers</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>News</span></a>
-                            <a class="d-flex align-items-center bar" href="#"><span>Contact</span></a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <LawList/>
 
         <section id="together" class="row text-center justify-content-center p-5 ">
             <div class="col-10 col-sm-12 col-xl-8 col-xxl-6 d-flex flex-column align-items-center">
@@ -183,42 +81,13 @@
 </template>
 
 <script>
+import LawList from '@/components/LawComponent.vue'
+import ChallengeComp from '@/components/ChallengeComponent.vue'
+
 export default {
-    data(){
-        return{
-            members:[
-                {name: 'Deborah Brown',img: 'column1-image1.jpg'},
-                {name: 'Allen Lucas',img: 'column1-image2.jpg'},
-                {name: 'Muriel Potter',img: 'column1-image3.jpg'},
-                {name: 'Ken Douglas',img: 'column1-image4.jpg'},
-                {name: 'Loretta Harris',img: 'column1-image5.jpg'},
-                {name: 'Phil Russel',img: 'column1-image6.jpg'}
-            ],
-
-            practices:[
-                {area: 'tax Litigation',img:'column2-image1.jpg'},
-                {area: 'Aquisitions',img:'column2-image2.jpg'},
-                {area: 'Financial Advice',img:'column2-image3.jpg'},
-                {area: 'International',img:'column2-image4.jpg'},
-                {area: 'Oil and Gas',img:'column2-image5.jpg'},
-                {area: 'Capital Markets',img:'column2-image6.jpg'}
-            ],
-
-            posts:[
-                {title: 'Low Oli Prices', img:'column3-image1.jpg'},
-                {title: 'Cost of Divorce', img:'column3-image2.jpg'},
-                {title: '2015 Tax Laws', img:'column3-image3.jpg'},
-                {title: 'Surveys Matter', img:'column3-image4.jpg'},
-                {title: 'In-House Work', img:'column3-image5.jpg'},
-                {title: 'Obama Care', img:'column3-image6.jpg'}
-            ],
-
-            law:[
-                {img: 'law_7.jpg', title: 'INTERNATIONAL',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
-                {img: 'law_8.jpg', title: 'PARTNERSHIPS',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'},
-                {img: 'law_3.jpg', title: 'EXCELLENCE',text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ab.'}
-            ],
-        };
+    components:{
+        LawList,
+        ChallengeComp
     }, 
 }
 </script>
@@ -226,163 +95,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/style.scss';
-#first{
-
-    .border_t{
-        border-top: 3px green solid;
-
-        .bg_first{
-        background-color: $col-one;
-        border: 1px solid $col-four;
-
-            a{
-                background-color: $med-two;
-                position: relative;
-                transition: all .35s;
-
-                &:after{
-                    position: absolute;
-                    content: "";
-                    top: 0;
-                    left: 0;
-                    width: 0;
-                    height: 100%;
-                    background: $col-four;
-                    transition: all .35s;
-                } 
-
-                &:hover{
-                    color: $col-two;
-                }
-
-                &:hover:after{
-                    width: 100%;
-                }
-
-                span{
-                    position: relative;
-                    z-index: 2;
-                }
-            }
-        }
-    }
-}
-
-#global{
-    .check{
-        color: $col-tree;
-    }
-}
-
-#ask{
-color:$col-one;
-    .btn_c{
-        background-color: $my-col;
-        position: relative;
-        transition: all .35s;
-        span{
-            position: relative;
-            z-index: 2;
-        }
-    }
-    .btn_c:after{
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: $col-four;
-        transition: all .35s;
-    } 
-    
-    .btn_c:hover{
-        color: $col-tree;
-    }
-
-    a:hover:after{
-        width: 100%;
-    }   
-}
-
-#challenge{
-    hr{
-        color:  $med-five;
-    }
-
-    .my_card{
-        background-color: $med-one;
-    }
-}
-
-#envato{
-    background-color: $med-two;
-    color: $col-one;
-    background-image: url('@/assets/img/showeare-parallax.jpg');
-    background-position: center;
-}
-
-#law{
-    position: relative;
-    .my_row{
-        position: absolute;
-        background-color: $col-one;
-        box-shadow: 2px 1px 8px $med-one;
-        bottom: 4rem;
-    }
-
-    img{
-        width: 100%;
-    }
-
-    .bar{
-        height: 100%;
-        a{
-            text-decoration: none;
-            color: $med-four;
-            height: 100%;
-            
-            &:hover{
-                border-top: 2px solid green;
-            }
-        }
-    }
-}
-
-#together{
-    background-image: url('@/assets/img/where-we-work-parallax.jpg');
-    background-position: center;
-    color: $col-one;
-    font-family: 'Source Sans Pro', sans-serif;
-
-    a{
-        background-color: $col-tree;
-        position: relative;
-        transition: all .35s;
-
-        &:after{
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: $col-four;
-            transition: all .35s;
-        } 
-
-        &:hover{
-            color: $col-two;
-        }
-
-        &:hover:after{
-            width: 100%;
-        }
-
-        span{
-            position: relative;
-            z-index: 2;
-        }
-    }
-}
 </style>

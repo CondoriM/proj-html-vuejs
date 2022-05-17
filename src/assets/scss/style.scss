@@ -28,7 +28,12 @@ $mat-tree: #8c5026;
 $mat-four: #666971;
 $mat-one: #d2524a;
 
+//colori non della palette MY
 $my-col: #61aca5;
+
+$my-one: #5d8680;
+$my-two: #798e8b;
+$my-tree: #949494;
 
 .jumbo{
     background-image: url('@/assets/img/video_law_home_preview.jpg');
@@ -70,4 +75,175 @@ $my-col: #61aca5;
 
 .t_size{
     font-size: 0.9rem;
+}
+
+//MAIN COMPONENT
+
+#first{
+
+    .border_t{
+        border-top: 3px green solid;
+
+        .bg_first{
+        background-color: $col-one;
+        border: 1px solid $col-four;
+
+            a{
+                background-color: $med-two;
+                position: relative;
+                transition: all .35s;
+
+                &:after{
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background: $col-four;
+                    transition: all .35s;
+                } 
+
+                &:hover{
+                    color: $col-two;
+                }
+
+                &:hover:after{
+                    width: 100%;
+                }
+
+                span{
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+#global{
+    .check{
+        color: $col-tree;
+    }
+}
+
+#ask{
+background-image: linear-gradient(45deg,$col-tree,$med-tree,$my-one,$my-two,$my-tree);
+background-position: left;
+background-size: 300%;
+animation: bg-animation 5s infinite alternate;
+
+@keyframes bg-animation {
+    0% {background-position: left}
+    50% {background-position: right;}
+}
+
+    .btn_c{
+        background-color: $my-col;
+        position: relative;
+        transition: all .35s;
+        span{
+            position: relative;
+            z-index: 2;
+        }
+    }
+    .btn_c:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: $col-four;
+        transition: all .35s;
+    } 
+    
+    .btn_c:hover{
+        color: $col-tree;
+    }
+
+    a:hover:after{
+        width: 100%;
+    }   
+}
+
+#challenge{
+    hr{
+        color:  $med-five;
+    }
+
+    .my_card{
+        background-color: $med-one;
+    }
+}
+
+#envato{
+    background-color: $med-two;
+    color: $col-one;
+    background-image: url('@/assets/img/showeare-parallax.jpg');
+    background-position: center;
+}
+
+#law{
+    position: relative;
+    .my_row{
+        position: absolute;
+        background-color: $col-one;
+        box-shadow: 2px 1px 8px $med-one;
+        bottom: 4rem;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    .bar{
+        height: 100%;
+        a{
+            text-decoration: none;
+            color: $med-four;
+            height: 100%;
+            
+            &:hover{
+                border-top: 2px solid green;
+            }
+        }
+    }
+}
+
+#together{
+    background-image: url('@/assets/img/where-we-work-parallax.jpg');
+    background-position: center;
+    color: $col-one;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    a{
+        background-color: $col-tree;
+        position: relative;
+        transition: all .35s;
+
+        &:after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: $col-four;
+            transition: all .35s;
+        } 
+
+        &:hover{
+            color: $col-two;
+        }
+
+        &:hover:after{
+            width: 100%;
+        }
+
+        span{
+            position: relative;
+            z-index: 2;
+        }
+    }
 }
